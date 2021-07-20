@@ -20,19 +20,21 @@
 </head>
 
 <body>
+    
+       <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0" nonce="r49ibJJ6"></script>
     <!-- Preloader -->
     <div id="preloader">
         <div class="south-load"></div>
     </div>
-
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
-        <!-- Top Header Area -->
+         <!-- Top Header Area -->
         <div class="top-header-area">
             <div class="h-100 d-md-flex justify-content-between align-items-center">
                 <div class="email-address">
-                      <a href="mailto:info@duolife.ke" style="color: white">info@duolife.ke</a>
+                    <a href="mailto:info@duolife.ke" style="color: white">info@duolife.ke</a>
                 </div>
                 <div class="phone-number d-flex">
                     <div class="icon">
@@ -52,7 +54,7 @@
                 <nav class="classy-navbar justify-content-between" id="southNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="https://elitecomp.co.ke/"><img src="img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -69,7 +71,7 @@
 
                         <!-- Nav Start -->
                         <div class="classynav">
-                            <ul>
+                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
                                 <li><a href="listings.html">Products</a></li>
@@ -138,71 +140,70 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content">
-                        <h3 class="breadcumb-title">Contact</h3>
+                        <h3 class="breadcumb-title">Message</h3>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+      <!-- ##### Featured Properties Area Start ##### -->
+    <section class="featured-properties-area section-padding-100-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading wow fadeInUp">
+                        <h2>Messaging</h2>
+                        <p>DuoLife Pharmacueticals</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <p> <?php 
+    if(!isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $telephone = $_POST['telephone'];
+        $message = $_POST['message']; 
+
+        $to = "info@duolife.ke";
+        $subject = 'Message from Elite Computers and Branding'." , ";
+        $msg ="Name: ".$name." , "."Telephone: ".$telephone." , "." Subject: ".$subject."wrote the following: ".$message;
+        $headers ="From: ".$email;
+         if(mail($to,$subject,$msg,$headers)){
+            
+          echo "<b>Message Sent. Thank You $name for your message.<b>";
+}
+
+else {
+    echo "yolo";
+    
+}
+
+       
+
+
+    }
+    else
+    {
+        echo "try again";
+    }
+
+ ?></p>
+
+                
+               
+                 
+               
             </div>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
 
-    <section class="south-contact-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="contact-heading">
-                        <h6>Contact info</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    <div class="content-sidebar">
-                        <!-- Office Hours -->
-                        <div class="weekly-office-hours">
-                            <ul>
-                                <li class="d-flex align-items-center justify-content-between"><span>Monday - Friday</span> <span>08 AM - 17 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Saturday</span> <span>09 AM - 14 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Sunday</span> <span>Closed</span></li>
-                            </ul>
-                        </div>
-                        <!-- Address -->
-                        <div class="address mt-30">
-                            <h6><img src="img/icons/phone-call.png" alt=""> +254 742 838 285 | <br> +254 776 938 689
-</h6>
-                            <h6><img src="img/icons/envelope.png" alt=""> info@duolife.ke | sales@duolife.ke  </h6>
-                            <h6><img src="img/icons/location.png" alt=""> P.O Box 344-70100 <br>
-                                                                            Building Name - Goodwill <br>
-                                                                            Agoi Road - pangani</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="contact-form">
-                        <form action="message.php" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name"  placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="telephone"  placeholder="Your Phone" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message"  cols="30" rows="10" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" name="sumit" class="btn south-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Google Maps -->
    <!--  <div class="map-area mb-100">
         <div class="container">
